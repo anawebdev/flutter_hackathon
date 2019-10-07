@@ -5,86 +5,150 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   final PageController ctrl = PageController();
+  static const TextDark = Color(0xFF808080);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+            headline: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+            title: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            subtitle: TextStyle(fontSize: 16.0)),
       ),
       home: Scaffold(
-        body: PageView(
-          scrollDirection: Axis.horizontal,
-          controller: ctrl,
-          children: [
+          body: PageView(
+              scrollDirection: Axis.horizontal,
+              controller: ctrl,
+              children: [
             Container(
               color: Colors.grey,
-              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 40.0),
+              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
               alignment: Alignment.topCenter,
-              child: Column(
-                children: [
-                      Transform.translate(
-                        offset: const Offset(0.0, -68.0),
-                        child: CircleAvatar(
-                          radius: 68,
-                          backgroundImage: NetworkImage('https://picsum.photos/250?image=9'),
-
-                        )
-                      ),
-                      Text('Hello World',
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                          .textTheme
-                          .display1
-                          .copyWith(color: Colors.black)
-                        ),
-                      Text('Hello World',
-                        style: Theme.of(context)
-                          .textTheme
-                          .display1
-                          .copyWith(color: Colors.white)
-                        ),
-                        Row(children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              color: Colors.orange)
-                          ),
-                          Expanded(
-                            child: Container(
-                              color: Colors.orange)
-                          ),
-                          Expanded(
-                            child: Container(
-                              color: Colors.orange)
-                          ),
-                        ],
-  )
-                    ]
+              child: Column(children: [
+                Transform.translate(
+                  offset: const Offset(0.0, -68.0),
+                  child: CircleAvatar(
+                    radius: 68,
+                    backgroundImage:
+                        NetworkImage('https://picsum.photos/250?image=9'),
+                  ),
                 ),
-              ),
+                Transform.translate(
+                    offset: const Offset(0.0, -68.0),
+                    child: Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: Text('Spitname hinzufugen',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline
+                              .copyWith(color: TextDark)),
+                    )),
+                Transform.translate(
+                    offset: const Offset(0.0, -68.0),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                            child: Container(
+                                color: Colors.orange,
+                                child: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage: NetworkImage(
+                                            'https://picsum.photos/250?image=9'),
+                                      ),
+                                    ),
+                                    Text('Impfung',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .title
+                                            .copyWith(color: Colors.black)),
+                                    Text('Jetzt eintragen',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle
+                                            .copyWith(color: Colors.black))
+                                  ],
+                                ))),
+                        Expanded(
+                            child: Container(
+                                color: Colors.blue,
+                                child: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage: NetworkImage(
+                                            'https://picsum.photos/250?image=9'),
+                                      ),
+                                    ),
+                                    Text('Impfung',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .title
+                                            .copyWith(color: Colors.black)),
+                                    Text('Jetzt eintragen',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle
+                                            .copyWith(color: Colors.black))
+                                  ],
+                                ))),
+                        Expanded(
+                            child: Container(
+                                color: Colors.pink,
+                                child: Column(
+                                  children: <Widget>[
+                                   Padding(
+                                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage: NetworkImage(
+                                            'https://picsum.photos/250?image=9'),
+                                      ),
+                                    ),
+                                    Text('Impfung',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .title
+                                            .copyWith(color: Colors.black)),
+                                    Text('Jetzt eintragen',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle
+                                            .copyWith(color: Colors.black))
+                                  ],
+                                ))),
+                      ],
+                    )),
+              ]),
+            ),
             Container(
               color: Colors.blue,
-              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 40.0),
-              ),
+              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
+            ),
             Container(
               color: Colors.orange,
-              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 40.0),),
+              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
+            ),
             Container(
               color: Colors.pink,
-              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 40.0),),
-          ]
-        )
-      ),
+              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
+            ),
+          ])),
     );
   }
 }
