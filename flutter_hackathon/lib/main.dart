@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'nv_theme.dart' as VetevoTheme;
 
 void main() => runApp(MyApp());
 
@@ -6,7 +7,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   final PageController ctrl = PageController();
   static const TextDark = Color(0xFF808080);
-
+  static const DangerColor = Color(0xFF808080);
+  static const PrimaryColor = Color(0xFF49B2AE);
+  static const Charcoal = Color(0xFF484848);
+  static const OffWhite = Color(0xFFF4F4F4);
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,9 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
-            headline: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
-            title: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-            subtitle: TextStyle(fontSize: 16.0)),
+            headline: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Charcoal),
+            display4: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Charcoal),
+            title: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Charcoal),
+            subtitle: TextStyle(fontSize: 12.0, color: Charcoal)),
       ),
       home: Scaffold(
           body: PageView(
@@ -24,7 +30,7 @@ class MyApp extends StatelessWidget {
               controller: ctrl,
               children: [
             Container(
-              color: Colors.grey,
+              color: OffWhite,
               margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
               alignment: Alignment.topCenter,
               child: Column(children: [
@@ -40,12 +46,12 @@ class MyApp extends StatelessWidget {
                     offset: const Offset(0.0, -68.0),
                     child: Padding(
                       padding: EdgeInsets.all(15.0),
-                      child: Text('Spitname hinzufugen',
+                      child: Text('Spitzname hinzufugen',
                           textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
                               .headline
-                              .copyWith(color: TextDark)),
+                              .copyWith(fontSize: 16.0, fontWeight: FontWeight.bold, color: Color.fromRGBO(34,34,34,.45))),
                     )),
                 Transform.translate(
                     offset: const Offset(0.0, -68.0),
@@ -53,7 +59,33 @@ class MyApp extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                             child: Container(
-                                color: Colors.orange,
+                                color: Colors.transparent,
+                                child: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage: NetworkImage(
+                                            'https://picsum.photos/250?image=9'),
+                                      ),
+                                    ),
+                                    Text('Impfung',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .title),
+                                    Text('Jetzt eintragen',
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle
+                                            .copyWith(color: Colors.black))
+                                  ],
+                                ))),
+                        Expanded(
+                            child: Container(
+                                color: Colors.transparent,
                                 child: Column(
                                   children: <Widget>[
                                     Padding(
@@ -80,34 +112,7 @@ class MyApp extends StatelessWidget {
                                 ))),
                         Expanded(
                             child: Container(
-                                color: Colors.blue,
-                                child: Column(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                                      child: CircleAvatar(
-                                        radius: 30,
-                                        backgroundImage: NetworkImage(
-                                            'https://picsum.photos/250?image=9'),
-                                      ),
-                                    ),
-                                    Text('Impfung',
-                                        textAlign: TextAlign.center,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .title
-                                            .copyWith(color: Colors.black)),
-                                    Text('Jetzt eintragen',
-                                        textAlign: TextAlign.center,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .subtitle
-                                            .copyWith(color: Colors.black))
-                                  ],
-                                ))),
-                        Expanded(
-                            child: Container(
-                                color: Colors.pink,
+                                color: Colors.transparent,
                                 child: Column(
                                   children: <Widget>[
                                    Padding(
