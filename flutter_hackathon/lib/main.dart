@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                             child: Container(
+<<<<<<< HEAD
                                 color: Colors.transparent,
                                 child: Column(
                                   children: <Widget>[
@@ -145,6 +146,33 @@ class MyApp extends StatelessWidget {
               color: Colors.blue,
               margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
             ),
+=======
+                              color: Colors.orange,
+                              child: Text('Hey', textAlign: TextAlign.center)
+                            )
+                          ),
+                          Expanded(
+                            child: Container(
+                              color: Colors.orange,
+                              child: Text('Hey')
+                            )
+                          ),
+                          Expanded(
+                            child: Container(
+                              color: Colors.orange,
+                              child: Text('Hey')
+                            )
+                          ),
+                        ],
+  )
+                    ]
+                ),
+              ),
+            Container(
+              color: Color(0xFF00FF23),
+              margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 40.0),
+              ),
+>>>>>>> 74ca8e3ce7e0fccdefbe05103115a4b195f72b4d
             Container(
               color: Colors.orange,
               margin: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 0.0),
